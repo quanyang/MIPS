@@ -1,0 +1,100 @@
+body {
+    background-color: #3498db;
+    font-family: Futura,Helvetica, "Century Gothic";
+    text-shadow: 1px 1px 0px black;
+    margin:0px;
+    padding:0px;
+}
+
+.todo {
+    font-size:12px;
+}
+.header {
+    color: white;
+    font-size: 50px;
+    padding-top:20px;
+    text-align: center;
+}
+.content {
+    text-align: center;
+    margin:auto;
+    width:80%;
+    font-size:12px;
+    color:white;
+}
+#instructionBlock,.data {
+    font-size:12px !important;
+}
+.data td { 
+    border:1px solid black;
+    border-bottom:0px;
+    border-right:0px;
+}
+.data td:last-child {
+    border-right:1px solid black;
+}
+.data tr:last-child td{
+    border-bottom:1px solid black;
+}
+
+a.button, input.button {
+	cursor: pointer;
+    font-family:Futura,Century Gothic;
+    background: #44c650;
+    border: 0px;
+    padding: 5px 80px;
+    font-weight:bold;
+    text-transform:uppercase;
+    color: white;
+    font-size: 15px;
+    text-shadow: 1px 1px 0px #222;
+    box-shadow: 3px 3px 0px #006633;
+    -webkit-transition: background-color 0.15s ease-in-out;
+    -moz-transition: background-color 0.15s ease-in-out;
+    -o-transition: background-color 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out;
+}
+a.button {
+	display: inline-block;
+	text-decoration: none;
+	padding: 6px 12px 6px 12px;
+}
+input.button {
+//font-size:15px!important;
+padding: 5px 20px;
+}
+a.button:active, input.button:active {
+    position:relative;
+    top:1px;		
+}
+a.button:hover, input.button:hover {
+	background: #00b200;
+    color:white;
+    text-shadow: 1px 1px 0px #222;
+    position:relative;
+    cursor:pointer;
+    cursor:hand;
+}
+input[type="text"],input[type="password"],textarea, select  {
+	margin-left:0px;
+    background-color: #F7f7f7; 
+    border: 1px solid black;
+    padding: 5px;
+	color:#444;
+	-webkit-transition: border-color 0.2s ease-in-out;
+    -moz-transition: border-color 0.2s ease-in-out;
+    -o-transition: border-color 0.2s ease-in-out;
+    transition: border-color 0.2s ease-in-out;	
+}
+input[type="text"]:hover  ,input[type="password"]:hover,textarea:hover,select:hover {
+   // border :1px solid pink;
+    box-shadow: 0px 0px 9px black;
+}
+input[type="text"]:focus ,input[type="password"]:focus,textarea:focus,select:focus {
+    border :1px solid #CB4242;
+    box-shadow: 0px 0px 9px #cb4242;
+}
+input, textarea, keygen, select, button, isindex {
+    outline:none;
+    resize: none;
+}

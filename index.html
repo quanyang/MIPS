@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>MIPS Processor Simulator</title>
+        <meta name="description" content="Simulator for MIPS">
+        <link rel="stylesheet" href="main.css">
+        <script type="text/javascript" src="bone.js"/></script>
+        <script type="text/javascript" src="modules.js"/></script>
+        <script type="text/javascript">
+        window.onload= function() {
+         //   document.getElementById("instructions").value = "add $1, $2, $3";
+        };
+            
+            var block = new processor();
+            function load() {
+                block = new processor();
+                //load instructions into instruction block;
+                block.loadInstructions(document.getElementById("instructions"));
+                //alert(block.instructionBlock.getNext());
+           //     document.getElementById("instructionBlock").innerHTML = block.instructionBlock.instructions.toString().replace(/\,/gi,'\n');
+            }
+            function run() {
+             block.operate();   
+            }
+        </script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-49902112-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+    </head>
+<body>
+    <div class="header">
+        MIPS Processor Simulator
+    </div>
+    <div class="content">
+        Register $2 and $3 is set to integer value of 1<br/>
+        Only beq, and, or, add, sub is working. lw and sw is still a little buggy.<br/><br/>
+        <div class="todo" style="text-align:left">
+       <!-- Left to-do:<br/>
+        1) Interface to view instructions data path<br/>
+        2) Coding and testing out the entire data path (Run mode and step mode)<br/>
+        3) Delays<br/>
+        4) ... <br/>-->
+        </div>
+        <textarea id="instructions" cols="50" rows="10">
+add $2, $2, $3
+add $2, $2, $3
+beq $0,$0,jump
+add $2, $2, $3
+add $2, $2, $3
+jump:
+add $4, $2, $3</textarea><br />    
+        <input class="button" type="button" name="load" onclick="load();" value="LOAD CODE"/>
+        
+        <input class="button" type="button" name="load" onclick="run();" value="RUN CODE"/>
+        <br /><br />
+        <div id="registerFile" class="data" style="position:fixed;right:20px;top:20px;margin-right:5px;"></div>
+        <div id="instructionBlock" class="data" ></div><br/><br/>
+        <div style="font-size:10px">Created by Yeo Quan Yang. Based on Simplified MIPS Processor.</div><br/>
+    </div>   
+    </body>
+</html>
